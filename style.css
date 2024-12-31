@@ -1,0 +1,236 @@
+.game-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.left-panel, .right-panel {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+}
+
+.info-group {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.score, .time, .miss, .combo {
+    font-size: 24px;
+    margin: 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-icon {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+}
+
+.info-icon.brown {
+    color: #8B4513;
+}
+
+.info-icon.golden {
+    color: #FFD700;
+}
+
+.info-icon.red {
+    color: #FF4444;
+}
+
+.time .info-icon {
+    color: #2196F3;
+}
+
+.miss .info-icon {
+    color: #F44336;
+}
+
+.score .info-icon {
+    color: #FFC107;
+}
+
+.combo .info-icon {
+    color: #FF5722;
+}
+
+.highscores .info-icon {
+    color: #4CAF50;
+}
+
+.combo {
+    transition: all 0.3s ease;
+}
+
+.instructions {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.instructions p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+.instructions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.instructions li {
+    margin: 10px 0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 300px;
+    margin: 20px auto;
+}
+
+.hole {
+    background-color: #654321;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.mole {
+    width: 80%;
+    height: 80%;
+    background-image: url('https://cdn.pixabay.com/photo/2016/04/01/09/29/cartoon-1299393_960_720.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: -100%;
+    left: 10%;
+    transition: bottom 0.1s;
+    cursor: pointer;
+}
+
+.mole.active {
+    bottom: 0;
+}
+
+.mole.normal-mole {
+    filter: brightness(1);
+}
+
+.mole.golden-mole {
+    filter: sepia(100%) saturate(300%) brightness(1.2) hue-rotate(20deg);
+}
+
+.mole.bomb-mole {
+    filter: brightness(0.2) contrast(200%);
+}
+
+.highscores {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.highscores h2 {
+    color: #333;
+    margin: 0 0 15px 0;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#highScores {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#highScores li {
+    font-size: 16px;
+    padding: 8px 12px;
+    margin: 5px 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+button {
+    font-size: 20px;
+    padding: 10px 30px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 1000px) {
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .left-panel, .right-panel {
+        flex: none;
+        width: 100%;
+        max-width: 500px;
+    }
+} 

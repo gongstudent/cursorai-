@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>打地鼠游戏</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="left-panel">
+            <div class="info-group">
+                <div class="time">
+                    <i class="fas fa-clock info-icon"></i>
+                    <span class="info-text">时间: <span id="time">30</span></span>
+                </div>
+                <div class="miss">
+                    <i class="fas fa-times-circle info-icon"></i>
+                    <span class="info-text">未击中: <span id="miss">0</span>/4</span>
+                </div>
+            </div>
+            <div class="instructions">
+                <p><i class="fas fa-book info-icon"></i> 游戏说明：</p>
+                <ul>
+                    <li><i class="fas fa-mouse info-icon brown"></i> 普通地鼠 - 1分</li>
+                    <li><i class="fas fa-mouse info-icon golden"></i> 金色地鼠 - 3分</li>
+                    <li><i class="fas fa-bomb info-icon"></i> 炸弹地鼠 - 扣2分</li>
+                    <li><i class="fas fa-fire info-icon red"></i> 连击3次或以上双倍分数！</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="game-main">
+            <div class="grid">
+                <div class="hole"><div class="mole"></div></div>
+                <div class="hole"><div class="mole"></div></div>
+                <div class="hole"><div class="mole"></div></div>
+                <div class="hole"><div class="mole"></div></div>
+                <div class="hole"><div class="mole"></div></div>
+                <div class="hole"><div class="mole"></div></div>
+                <div class="hole"><div class="mole"></div></div>
+                <div class="hole"><div class="mole"></div></div>
+                <div class="hole"><div class="mole"></div></div>
+            </div>
+            <button id="start"><i class="fas fa-play"></i> 开始游戏</button>
+        </div>
+
+        <div class="right-panel">
+            <div class="info-group">
+                <div class="score">
+                    <i class="fas fa-star info-icon"></i>
+                    <span class="info-text">分数: <span id="score">0</span></span>
+                </div>
+                <div class="combo">
+                    <i class="fas fa-fire-alt info-icon"></i>
+                    <span class="info-text">连击: <span id="combo">0</span></span>
+                </div>
+            </div>
+            <div class="highscores">
+                <h2><i class="fas fa-trophy info-icon"></i> 排行榜</h2>
+                <ul id="highScores"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
